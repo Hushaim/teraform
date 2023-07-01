@@ -34,7 +34,7 @@ ingress {                                 #inbound rule
    
   }
 
-  tags = {
-    Name = "allow_tls"
-  }
+  
+tags = local.commaom_tags
+
 }
