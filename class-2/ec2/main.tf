@@ -18,10 +18,21 @@ data "aws_ami" "ubuntu2" {    #data or resource. #ubuntu or can be anyname
 resource "aws_instance" "web" {
   ami           =data.aws_ami.ubuntu2.id  
   instance_type = "t2.micro"
-  count = 1  # how many vm
+  #count = 1  # how many vm
   availability_zone = "us-east-1a"
-  key_name = aws_key_pair.deployer.key_name 
+  key_name = aws_key_pair.deployer.key_name
+  vpc_security_group_ids = [aws_security_group.allow_tls.id] 
   tags = {
     Name = "HelloWorld"
   }
+
+} 
+
+output ec2 {
+    value = aws_instance.web.public_ip
 }
+
+output ec2y {
+    value = aws_instance.web.private_ip
+}
+
