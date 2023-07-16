@@ -1,0 +1,7 @@
+#key pair import
+resource "aws_key_pair" "deployer" {
+  key_name   = var.key_name
+  public_key = file(var.key_file)
+}
+
+
