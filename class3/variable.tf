@@ -1,12 +1,12 @@
 variable region { #region is the name
   type = string  #all the variable type need
   description ="Enter Region" # description is a option
-  default = "us-east-1" 
+  default = "" 
 }
 
 variable key_name{
   type = string 
-  default = "my-key"
+  default = ""
   description = "provide key pair name"
 
 }
