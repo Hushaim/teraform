@@ -17,7 +17,7 @@ source "amazon-ebs" "example" {
   ssh_private_key_file  = "~/.ssh/id_rsa"
 
   run_tags = {
-    Name = "Golden Image"
+    Name = "Golden Image" 
   }
 
 }
